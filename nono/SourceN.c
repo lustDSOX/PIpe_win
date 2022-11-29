@@ -15,6 +15,13 @@ main() {
 	{
 		printf("You: ");
 		scanf("%s", &message);
+		if (strstr(message, ",") != NULL) {
+			int i = 0;
+			while (message[i] != ',') {
+				i++;
+			}
+			message[i] = '.';
+		}
 		a = atof(message);
 		if (a) {
 			hMainPipe = CreateFile(sNamePipe, GENERIC_READ | GENERIC_WRITE, 0, NULL, OPEN_EXISTING, 0, NULL);

@@ -26,7 +26,7 @@ main() {
 			PIPE_UNLIMITED_INSTANCES, 256, 256, INFINITE, NULL);
 		if (!createdP)
 		{
-			b = CreateProcessA("..\\x64\\Debug\\nono.exe", NULL, NULL, NULL, FALSE, CREATE_NEW_CONSOLE, NULL, NULL, &si, &pi);
+			//b = CreateProcessA("..\\x64\\Debug\\nono.exe", NULL, NULL, NULL, FALSE, CREATE_NEW_CONSOLE, NULL, NULL, &si, &pi);
 			createdP = TRUE;
 		}
 		conn = ConnectNamedPipe(hMainPipe, NULL);
