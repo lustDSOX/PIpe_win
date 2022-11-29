@@ -36,26 +36,11 @@ main() {
 			if (sRead) {
 				printf("Client: ");
 				printf(buffer);
-				for (int i = 0; i < realReading; i++) { 
-					if (buffer[i] >= 'A' && buffer[i] <= 'Z' || buffer[i] >= 'a' && buffer[i] <= 'z' || buffer[i] >= 'À' && buffer[i] <= 'ß' || buffer[i] >= 'à' && buffer[i] <= 'ÿ') {
-						if (buffer[i] == 52428) {
-							break;
-						}
-						text = TRUE;
-						break;
-					}
-				}
-				if (!text)
-				{
-					float f = atof(buffer);
-					f *= f;
-					sprintf(message, "%f", f);
-					printf("\nYou: %s\n", message);
-				}
-				else {
-					sprintf(message, "%s", "uncorrect message");
-					printf("\nYou: %s\n", message);
-				}
+
+				float f = atof(buffer);
+				f *= f;
+				sprintf(message, "%f", f);
+				printf("\nYou: %s\n", message);
 				WriteFile(hMainPipe, message, 256, NULL, NULL);
 			}
 		}
